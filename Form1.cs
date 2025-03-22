@@ -96,7 +96,7 @@ namespace CalculadoraComForms
 
             else if (subtrair)
             {
-                string expression = txtResultado.Text.Replace(" -(", " +(");  // Altera para a forma "5 -(-3)" para "5 +3"
+                string expression = txtResultado.Text.Replace(" -(", " +(");  
                 List<string> aSubtrair = txtResultado.Text.Split("-").ToList();
 
                 double primeiroNumero = Convert.ToDouble(aSubtrair[0]);
@@ -250,18 +250,18 @@ namespace CalculadoraComForms
         private void btnNegativo_Click(object sender, EventArgs e)
         {
 
-            // Se o texto for vazio, não faz nada
+            
             if (string.IsNullOrWhiteSpace(txtResultado.Text))
                 return;
 
-            // Se o texto já começa com um sinal negativo, remove ele (tornando o número positivo)
+          
             if (txtResultado.Text[0] == '-')
             {
                 txtResultado.Text = txtResultado.Text.Substring(1);
             }
             else
             {
-                // Se não começa com um sinal negativo, adiciona o sinal no início do texto
+                
                 txtResultado.Text = "-" + txtResultado.Text;
             }
 
